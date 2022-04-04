@@ -7,7 +7,7 @@
 
 import Foundation
 
-private let MAX_SECONDS = 30
+private let MAX_SECONDS = 300
 
 final class LoadedQuizViewModel: ObservableObject {
     
