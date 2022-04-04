@@ -5,3 +5,35 @@
   Created by Augusto Monteiro on 30/03/22.
   
 */
+
+// MARK: - LoginView
+"login_view_username" = "Username";
+
+"login_view_password" = "Password";
+    
+"login_view_login" = "Login";
+                  
+"login_view_continue_without_login" = "Continue without login";
+    
+"login_view_login_failed" = "Login failed. Try again.";
+
+// MARK: - QuizView
+"quiz_view_loading" = "Loading...";
+
+"quiz_view_try_again" = "Try again";
+
+// MARK: - LoadedQuizView
+"loaded_quiz_view_insert_word" = "Insert word";
+
+// MARK: - ResultView
+"result_view_reset" = "Reset";
+
+"result_view_start" = "Start";
+
+"result_view_success_alert_title" = "Congratulations";
+"result_view_success_alert_message" = "Good job! You found all the answers on time. Keep up with the great work.";
+"result_view_success_alert_button" = "Play Again";
+
+"result_view_failure_alert_title" = "Time finished";
+"result_view_failure_alert_message" = "Sorry, time is up! You got %d out of %d answers.";
+"result_view_failure_alert_button" = "Try Again";
