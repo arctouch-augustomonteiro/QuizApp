@@ -9,41 +9,18 @@ import SwiftUI
 
 struct LoadedQuizView: View {
     
+    @AppStorage(wrappedValue: "", AppStorageKeys.username.rawValue) var username
+    
     @StateObject var viewModel: LoadedQuizViewModel
+    
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(viewModel.question)
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .padding()
-                .layoutPriority(1)
-            
-            TextField(L10n.LoadedQuizView.textFieldPlaceholder,
-                      text: $viewModel.viewState.word)
-            .font(.title2)
-            .textFieldStyle(RoundedBorderTextFieldStyle())
-            .padding(.horizontal)
-            .disabled(!viewModel.isQuizTextFieldEnabled)
-            .onSubmit {
-                viewModel.submitWord()
-            }
-            
-            List(viewModel.viewState.answeredList.sorted(), id: \.self) {
-                Text($0)
-            }
-            .listStyle(PlainListStyle())
-            
-            ResultView(viewModel:
-                    .init(
-                        viewState: .init(
-                            timerState: $viewModel.timerState,
-                            answersCount: viewModel.viewState.answeredList.count,
-                            totalCount: viewModel.wordsList.count,
-                            secondsRemaining: viewModel.viewState.secondsRemaining)
-                    )
-            )
-            .overlay(Divider(), alignment: .top)
+            header
+            textField
+            listView
+            resultView
         }
         .onReceive(viewModel.timer) { _ in
             viewModel.handleTimerTick()
@@ -59,6 +36,66 @@ struct LoadedQuizView: View {
                 viewModel.restartQuiz()
             })
         }
+    }
+    
+    var header: some View {
+        VStack(alignment: .leading, spacing: 4.0) {
+            if !username.isEmpty {
+                HStack {
+                    Text("Hello, " + username)
+                    Spacer()
+                    Button("Logout") {
+                        username = ""
+                    }
+                }
+                .font(.body)
+            } else {
+                HStack {
+                    Spacer()
+                    Button("Login") {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }
+                }
+            }
+            
+            Text(viewModel.question)
+                .font(.largeTitle)
+                .fontWeight(.bold)
+        }
+        .padding()
+        .layoutPriority(1)
+    }
+    
+    var textField: some View {
+        TextField(L10n.LoadedQuizView.textFieldPlaceholder,
+                  text: $viewModel.viewState.word)
+        .font(.title2)
+        .textFieldStyle(RoundedBorderTextFieldStyle())
+        .padding(.horizontal)
+        .disabled(!viewModel.isQuizTextFieldEnabled)
+        .onSubmit {
+            viewModel.submitWord()
+        }
+    }
+    
+    var listView: some View {
+        List(viewModel.viewState.answeredList.sorted(), id: \.self) {
+            Text($0)
+        }
+        .listStyle(PlainListStyle())
+    }
+    
+    var resultView: some View {
+        ResultView(viewModel:
+                .init(
+                    viewState: .init(
+                        timerState: $viewModel.timerState,
+                        answersCount: viewModel.viewState.answeredList.count,
+                        totalCount: viewModel.wordsList.count,
+                        secondsRemaining: viewModel.viewState.secondsRemaining)
+                )
+        )
+        .overlay(Divider(), alignment: .top)
     }
     
 }

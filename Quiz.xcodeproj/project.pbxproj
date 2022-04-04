@@ -54,6 +54,8 @@
 		B4FF8A6027FB399700A6CDCD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF8A5F27FB399200A6CDCD /* LoginView.swift */; };
 		B4FF8A6127FB399D00A6CDCD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF8A5E27FB399200A6CDCD /* LoginViewModel.swift */; };
 		B4FF8A6227FB399D00A6CDCD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF8A5E27FB399200A6CDCD /* LoginViewModel.swift */; };
+		B4FF8A6427FB8E3900A6CDCD /* AppStorageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF8A6327FB8E3900A6CDCD /* AppStorageKeys.swift */; };
+		B4FF8A6527FB8E3900A6CDCD /* AppStorageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF8A6327FB8E3900A6CDCD /* AppStorageKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +113,7 @@
 		B4FF8A5A27FB398400A6CDCD /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		B4FF8A5E27FB399200A6CDCD /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		B4FF8A5F27FB399200A6CDCD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		B4FF8A6327FB8E3900A6CDCD /* AppStorageKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +288,7 @@
 		B4FF8A0527FB26FD00A6CDCD /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B4FF8A6327FB8E3900A6CDCD /* AppStorageKeys.swift */,
 				B4FF8A0C27FB275C00A6CDCD /* AlertInfo.swift */,
 				B4FF8A3A27FB2EFE00A6CDCD /* TimerState.swift */,
 				B4FF8A0D27FB276000A6CDCD /* System.swift */,
@@ -528,6 +532,7 @@
 				B4FF8A2927FB28E700A6CDCD /* QuizView.swift in Sources */,
 				B4FF8A5B27FB398400A6CDCD /* LoginService.swift in Sources */,
 				B4FF8A3B27FB2EFE00A6CDCD /* TimerState.swift in Sources */,
+				B4FF8A6427FB8E3900A6CDCD /* AppStorageKeys.swift in Sources */,
 				B4FF89D327FB259300A6CDCD /* QuizApp.swift in Sources */,
 				B4FF8A3327FB291100A6CDCD /* ResultViewModel+Preview.swift in Sources */,
 				B4FF8A0E27FB276500A6CDCD /* AlertInfo.swift in Sources */,
@@ -558,6 +563,7 @@
 				B4FF8A5027FB38B200A6CDCD /* HTTPClient.swift in Sources */,
 				B4FF8A4E27FB306300A6CDCD /* L10n.swift in Sources */,
 				B4FF8A5427FB38D600A6CDCD /* RemoteQuizLoaderTests+Helpers.swift in Sources */,
+				B4FF8A6527FB8E3900A6CDCD /* AppStorageKeys.swift in Sources */,
 				B4FF8A4727FB2FEF00A6CDCD /* Model+Mock.swift in Sources */,
 				B4FF8A4927FB303100A6CDCD /* Model.swift in Sources */,
 				B4FF8A5827FB38E500A6CDCD /* XCTestCase+JSONSerialization.swift in Sources */,

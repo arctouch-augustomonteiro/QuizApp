@@ -11,7 +11,21 @@ import SwiftUI
 struct QuizApp: App {
     var body: some Scene {
         WindowGroup {
-            LoginView(viewModel: .init(loginService: FakeLoginService()))
+            ContentView()
         }
     }
+}
+
+struct ContentView: View {
+    
+    @AppStorage(wrappedValue: "", AppStorageKeys.username.rawValue) var username
+    
+    var body: some View {
+        if username.isEmpty {
+            LoginView(viewModel: .init(loginService: FakeLoginService()))
+        } else {
+            QuizView(viewModel: .init(quizLoader: RemoteQuizLoader()))
+        }
+    }
+    
 }

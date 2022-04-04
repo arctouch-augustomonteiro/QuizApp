@@ -9,12 +9,7 @@ import Foundation
 
 final class LoginViewModel: ObservableObject {
     
-    @Published var username: String = ""
-    @Published var password: String = ""
-    
-    @Published var isLoading: Bool = false
-    
-    @Published var authenticated: Bool?
+    @Published var viewState = ViewState()
     
     let loginService: LoginService
     
@@ -23,18 +18,30 @@ final class LoginViewModel: ObservableObject {
     }
     
     var isButtonEnabled: Bool {
-        !username.isEmpty && !password.isEmpty
+        !viewState.username.isEmpty && !viewState.password.isEmpty
     }
     
-    func login() {
-        if !isLoading {
-            isLoading = true
-            authenticated = nil
-            loginService.login(username: username, password: password) { [weak self] auth in
-                self?.authenticated = auth
-                self?.isLoading = false
+    func login(saveUsernameToAppStore: @escaping () -> Void) {
+        if !viewState.isLoading {
+            viewState.isLoading = true
+            viewState.authenticated = nil
+            loginService.login(username: viewState.username, password: viewState.password) { [weak self] auth in
+                saveUsernameToAppStore()
+                self?.viewState.authenticated = auth
+                self?.viewState.isLoading = false
             }
         }
     }
     
+}
+
+extension LoginViewModel {
+    struct ViewState {
+        var username: String = ""
+        var password: String = ""
+        
+        var isLoading: Bool = false
+        
+        var authenticated: Bool?
+    }
 }

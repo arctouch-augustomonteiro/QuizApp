@@ -9,6 +9,8 @@ import SwiftUI
 
 struct LoginView: View {
     
+    @AppStorage(wrappedValue: "", AppStorageKeys.username.rawValue) var username
+    
     @StateObject var viewModel: LoginViewModel
     
     @FocusState private var focusedField: InputField?
@@ -51,18 +53,18 @@ struct LoginView: View {
     var fields: some View {
         VStack {
             
-            TextField(L10n.LoginView.username, text: $viewModel.username)
+            TextField(L10n.LoginView.username, text: $viewModel.viewState.username)
                 .submitLabel(.next)
                 .focused($focusedField, equals: .username)
             
-            SecureField(L10n.LoginView.password, text: $viewModel.password)
+            SecureField(L10n.LoginView.password, text: $viewModel.viewState.password)
                 .submitLabel(.done)
                 .focused($focusedField, equals: .password)
             
         }
         .textFieldStyle(RoundedBorderTextFieldStyle())
         .disableAutocorrection(true)
-        .disabled(viewModel.isLoading)
+        .disabled(viewModel.viewState.isLoading)
         .onSubmit {
             switch focusedField {
             case .username:
@@ -78,10 +80,13 @@ struct LoginView: View {
             loginDestination
             
             Button(action: {
-                viewModel.login()
+                focusedField = nil
+                viewModel.login(saveUsernameToAppStore: {
+                    self.username = viewModel.viewState.username
+                })
             }) {
                 Group {
-                    if viewModel.isLoading {
+                    if viewModel.viewState.isLoading {
                         ProgressView()
                             .tint(.white)
                     } else {
@@ -96,7 +101,7 @@ struct LoginView: View {
             .controlSize(.large)
             .disabled(!viewModel.isButtonEnabled)
             
-            if viewModel.authenticated == false {
+            if viewModel.viewState.authenticated == false {
                 loginFailedText
             }
         }
@@ -104,7 +109,7 @@ struct LoginView: View {
     
     var loginDestination: some View {
         NavigationLink(destination: QuizView(viewModel: .init(quizLoader: RemoteQuizLoader())),
-                       tag: true, selection: $viewModel.authenticated) { EmptyView() }
+                       tag: true, selection: $viewModel.viewState.authenticated) { EmptyView() }
     }
     
     var loginFailedText: some View {
