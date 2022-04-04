@@ -49,6 +49,11 @@
 		B4FF8A5527FB38D600A6CDCD /* RemoteQuizLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF8A5227FB38D300A6CDCD /* RemoteQuizLoaderTests.swift */; };
 		B4FF8A5827FB38E500A6CDCD /* XCTestCase+JSONSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF8A5627FB38E200A6CDCD /* XCTestCase+JSONSerialization.swift */; };
 		B4FF8A5927FB38E500A6CDCD /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF8A5727FB38E200A6CDCD /* HTTPClientSpy.swift */; };
+		B4FF8A5B27FB398400A6CDCD /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF8A5A27FB398400A6CDCD /* LoginService.swift */; };
+		B4FF8A5C27FB398400A6CDCD /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF8A5A27FB398400A6CDCD /* LoginService.swift */; };
+		B4FF8A6027FB399700A6CDCD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF8A5F27FB399200A6CDCD /* LoginView.swift */; };
+		B4FF8A6127FB399D00A6CDCD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF8A5E27FB399200A6CDCD /* LoginViewModel.swift */; };
+		B4FF8A6227FB399D00A6CDCD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF8A5E27FB399200A6CDCD /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +108,9 @@
 		B4FF8A5327FB38D300A6CDCD /* RemoteQuizLoaderTests+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteQuizLoaderTests+Helpers.swift"; sourceTree = "<group>"; };
 		B4FF8A5627FB38E200A6CDCD /* XCTestCase+JSONSerialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+JSONSerialization.swift"; sourceTree = "<group>"; };
 		B4FF8A5727FB38E200A6CDCD /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
+		B4FF8A5A27FB398400A6CDCD /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		B4FF8A5E27FB399200A6CDCD /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		B4FF8A5F27FB399200A6CDCD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				B4FF8A1827FB288D00A6CDCD /* QuizLoader.swift */,
+				B4FF8A5A27FB398400A6CDCD /* LoginService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -265,6 +274,7 @@
 		B4FF8A0427FB26F800A6CDCD /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				B4FF8A5D27FB399200A6CDCD /* LoginView */,
 				B4FF8A1D27FB28C500A6CDCD /* QuizView */,
 				B4FF8A2027FB28C500A6CDCD /* LoadedQuiz */,
 				B4FF8A1A27FB28C400A6CDCD /* ResultView */,
@@ -360,6 +370,15 @@
 				B4FF8A4527FB2FE900A6CDCD /* Model+Mock.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		B4FF8A5D27FB399200A6CDCD /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				B4FF8A5F27FB399200A6CDCD /* LoginView.swift */,
+				B4FF8A5E27FB399200A6CDCD /* LoginViewModel.swift */,
+			);
+			path = LoginView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -492,6 +511,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4FF8A6227FB399D00A6CDCD /* LoginViewModel.swift in Sources */,
 				B4FF8A1127FB277400A6CDCD /* Model.swift in Sources */,
 				B4FF8A2327FB28DB00A6CDCD /* ResultViewModel.swift in Sources */,
 				B4FF8A2D27FB28F200A6CDCD /* LoadedQuizViewModel.swift in Sources */,
@@ -500,11 +520,13 @@
 				B4FF8A3827FB295900A6CDCD /* Array+String.swift in Sources */,
 				B4FF8A5127FB38B200A6CDCD /* HTTPClient.swift in Sources */,
 				B4FF8A1927FB289100A6CDCD /* QuizLoader.swift in Sources */,
+				B4FF8A6027FB399700A6CDCD /* LoginView.swift in Sources */,
 				B4FF8A0F27FB276700A6CDCD /* System.swift in Sources */,
 				B4FF8A0827FB271800A6CDCD /* L10n.swift in Sources */,
 				B4FF8A2B27FB28EC00A6CDCD /* QuizViewModel.swift in Sources */,
 				B4FF8A2527FB28E000A6CDCD /* ResultView.swift in Sources */,
 				B4FF8A2927FB28E700A6CDCD /* QuizView.swift in Sources */,
+				B4FF8A5B27FB398400A6CDCD /* LoginService.swift in Sources */,
 				B4FF8A3B27FB2EFE00A6CDCD /* TimerState.swift in Sources */,
 				B4FF89D327FB259300A6CDCD /* QuizApp.swift in Sources */,
 				B4FF8A3327FB291100A6CDCD /* ResultViewModel+Preview.swift in Sources */,
@@ -519,6 +541,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4FF8A5C27FB398400A6CDCD /* LoginService.swift in Sources */,
 				B4FF8A4B27FB304B00A6CDCD /* Array+String.swift in Sources */,
 				B4FF8A4D27FB305A00A6CDCD /* TimerState.swift in Sources */,
 				B4FF8A2427FB28DD00A6CDCD /* ResultViewModel.swift in Sources */,
@@ -526,6 +549,7 @@
 				B4FF8A2C27FB28F100A6CDCD /* LoadedQuizViewModel.swift in Sources */,
 				B4FF8A5527FB38D600A6CDCD /* RemoteQuizLoaderTests.swift in Sources */,
 				B4FF8A2A27FB28EC00A6CDCD /* QuizViewModel.swift in Sources */,
+				B4FF8A6127FB399D00A6CDCD /* LoginViewModel.swift in Sources */,
 				B4FF8A5927FB38E500A6CDCD /* HTTPClientSpy.swift in Sources */,
 				B4FF8A4C27FB305500A6CDCD /* AlertInfo.swift in Sources */,
 				B4FF8A4227FB2FC800A6CDCD /* QuizViewModelTests.swift in Sources */,

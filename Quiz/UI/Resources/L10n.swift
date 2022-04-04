@@ -16,6 +16,41 @@ final class L10n {
 }
 
 extension L10n {
+    enum LoginView {
+        static var username: String {
+            NSLocalizedString("login_view_username",
+                              tableName: fileName, bundle: bundle,
+                              comment: "Username textfield placeholder")
+        }
+        
+        static var password: String {
+            NSLocalizedString("login_view_password",
+                              tableName: fileName, bundle: bundle,
+                              comment: "Password textfield placeholder")
+        }
+        
+        static var login: String {
+            NSLocalizedString("login_view_login",
+                              tableName: fileName, bundle: bundle,
+                              comment: "Login button title")
+        }
+        
+        static var continueWithoutLogin: String {
+            NSLocalizedString("login_view_continue_without_login",
+                              tableName: fileName, bundle: bundle,
+                              comment: "Continue without login button title")
+        }
+        
+        static var loginFailed: String {
+            NSLocalizedString("login_view_login_failed",
+                              tableName: fileName, bundle: bundle,
+                              comment: "Text displayed when the login isn't sucessful")
+        }
+            
+    }
+}
+
+extension L10n {
     enum QuizView {
         static var loading: String {
             NSLocalizedString("quiz_view_loading",

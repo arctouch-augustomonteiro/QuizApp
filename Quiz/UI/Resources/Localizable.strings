@@ -6,6 +6,17 @@
   
 */
 
+// MARK: - LoginView
+"login_view_username" = "Username";
+
+"login_view_password" = "Password";
+    
+"login_view_login" = "Login";
+                  
+"login_view_continue_without_login" = "Continue without login";
+    
+"login_view_login_failed" = "Login failed. Try again.";
+
 // MARK: - QuizView
 "quiz_view_loading" = "Loading...";
 

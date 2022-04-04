@@ -11,7 +11,7 @@ import SwiftUI
 struct QuizApp: App {
     var body: some Scene {
         WindowGroup {
-            QuizView(viewModel: .init(quizLoader: RemoteQuizLoader()))
+            LoginView(viewModel: .init(loginService: FakeLoginService()))
         }
     }
 }
