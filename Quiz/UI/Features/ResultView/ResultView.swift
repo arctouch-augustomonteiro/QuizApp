@@ -27,12 +27,12 @@ struct ResultView: View {
                     .font(.headline)
                     .frame(minWidth: 0, maxWidth: .infinity)
             }
-            .tint(.orange)
+            .tint(QuizColors.tint)
             .buttonStyle(.borderedProminent)
             .controlSize(.large)
         }
         .padding()
-        .background(Color(red: 245/255, green: 245/255, blue: 245/255))
+        .background(QuizColors.lightGray)
     }
 }
 
