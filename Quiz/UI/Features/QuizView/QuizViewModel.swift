@@ -22,8 +22,8 @@ final class QuizViewModel: ObservableObject {
         quizLoader.load { [weak self] result in
             guard let self = self else { return }
             switch result {
-            case let .success(model):
-                self.state = .loaded(model)
+            case let .success(quiz):
+                self.state = .loaded(quiz)
             case .failure:
                 self.state = .error
             }
@@ -35,7 +35,7 @@ extension QuizViewModel {
     enum ViewState: Equatable {
         case loading
         case error
-        case loaded(Model)
+        case loaded(Quiz)
     }
     
     struct Environment {
