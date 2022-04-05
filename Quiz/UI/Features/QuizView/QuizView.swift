@@ -9,7 +9,7 @@ import SwiftUI
 
 struct QuizView: View {
     
-    @StateObject var viewModel: QuizViewModel
+    @ObservedObject var viewModel: QuizViewModel
     
     var body: some View {
         content
@@ -18,15 +18,13 @@ struct QuizView: View {
             .navigationBarHidden(true)
     }
     
-    @ViewBuilder var content: some View {
+    @ViewBuilder private var content: some View {
         switch viewModel.state {
         case .loading:
             ProgressView(L10n.QuizView.loading)
             
-        case let .loaded(model):
-            LoadedQuizView(viewModel: .init(viewState: .init(),
-                                            question: model.question,
-                                            wordsList: model.answer))
+        case let .loaded(quiz):
+            LoadedQuizView(viewModel: viewModel.buildLoadedQuizViewModel(with: quiz))
             
         case .error:
             Button(L10n.QuizView.loadError) { viewModel.fetchWordsList() }

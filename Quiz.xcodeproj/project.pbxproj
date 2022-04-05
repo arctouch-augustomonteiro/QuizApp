@@ -43,7 +43,7 @@
 		B4FF8A4C27FB305500A6CDCD /* AlertInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF8A0C27FB275C00A6CDCD /* AlertInfo.swift */; };
 		B4FF8A4D27FB305A00A6CDCD /* TimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF8A3A27FB2EFE00A6CDCD /* TimerState.swift */; };
 		B4FF8A4E27FB306300A6CDCD /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF8A0727FB271800A6CDCD /* L10n.swift */; };
-		B4FF8A6727FC798900A6CDCD /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF8A6627FC798900A6CDCD /* Colors.swift */; };
+		B4FF8A6727FC798900A6CDCD /* QuizColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF8A6627FC798900A6CDCD /* QuizColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,7 +93,7 @@
 		B4FF8A4127FB2FC500A6CDCD /* QuizViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModelTests.swift; sourceTree = "<group>"; };
 		B4FF8A4427FB2FE600A6CDCD /* QuizLoader+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuizLoader+Mock.swift"; sourceTree = "<group>"; };
 		B4FF8A4527FB2FE900A6CDCD /* Quiz+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quiz+Mock.swift"; sourceTree = "<group>"; };
-		B4FF8A6627FC798900A6CDCD /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		B4FF8A6627FC798900A6CDCD /* QuizColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,7 +246,7 @@
 			children = (
 				B4FF8A0627FB270B00A6CDCD /* Localizable.strings */,
 				B4FF8A0727FB271800A6CDCD /* L10n.swift */,
-				B4FF8A6627FC798900A6CDCD /* Colors.swift */,
+				B4FF8A6627FC798900A6CDCD /* QuizColors.swift */,
 				B4FF89D627FB259900A6CDCD /* Assets.xcassets */,
 				B4FF89D827FB259900A6CDCD /* Preview Content */,
 			);
@@ -480,7 +480,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4FF8A1127FB277400A6CDCD /* Quiz.swift in Sources */,
-				B4FF8A6727FC798900A6CDCD /* Colors.swift in Sources */,
+				B4FF8A6727FC798900A6CDCD /* QuizColors.swift in Sources */,
 				B4FF8A2327FB28DB00A6CDCD /* ResultViewModel.swift in Sources */,
 				B4FF8A2D27FB28F200A6CDCD /* LoadedQuizViewModel.swift in Sources */,
 				B4FF8A2727FB28E300A6CDCD /* LoadedQuizView.swift in Sources */,

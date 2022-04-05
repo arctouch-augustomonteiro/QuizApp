@@ -9,6 +9,6 @@ import Foundation
 
 extension Int {
     func toMinutesSeconds() -> (minutes: Int, seconds: Int) {
-        return (self / 60, (self % 3600) % 60)
+        (self / 60, (self % 3600) % 60)
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LoadedQuizView: View {
     
-    @StateObject var viewModel: LoadedQuizViewModel
+    @ObservedObject var viewModel: LoadedQuizViewModel
     
     var body: some View {
         VStack(alignment: .leading) {

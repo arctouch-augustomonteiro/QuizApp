@@ -9,9 +9,9 @@ import Foundation
 
 final class QuizViewModel: ObservableObject {
     
-    @Published var state: ViewState = .loading
+    @Published var state: QuizState = .loading
     
-    let quizLoader: QuizLoader
+    private let quizLoader: QuizLoader
     
     init(quizLoader: QuizLoader) {
         self.quizLoader = quizLoader
@@ -32,13 +32,15 @@ final class QuizViewModel: ObservableObject {
 }
 
 extension QuizViewModel {
-    enum ViewState: Equatable {
+    enum QuizState: Equatable {
         case loading
         case error
         case loaded(Quiz)
     }
-    
-    struct Environment {
-        let quizLoader: QuizLoader
+}
+
+extension QuizViewModel {
+    func buildLoadedQuizViewModel(with quiz: Quiz) -> LoadedQuizViewModel {
+        .init(viewState: .init(), question: quiz.question, wordsList: quiz.answer)
     }
 }

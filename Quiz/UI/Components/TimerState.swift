@@ -9,6 +9,6 @@ import Foundation
 
 enum TimerState {
     case idle
-    case runningTimer
+    case running
     case paused
 }

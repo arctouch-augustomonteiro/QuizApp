@@ -9,9 +9,9 @@ import SwiftUI
 
 final class ResultViewModel: ObservableObject {
     
-    @Published var viewState: ViewState
+    @Published var viewState: ResultState
     
-    init(viewState: ViewState) {
+    init(viewState: ResultState) {
         self.viewState = viewState
     }
     
@@ -25,20 +25,20 @@ final class ResultViewModel: ObservableObject {
     }
     
     var buttonTitle: String {
-        viewState.timerState == .runningTimer ? L10n.ResultView.reset : L10n.ResultView.start
+        viewState.timerState == .running ? L10n.ResultView.reset : L10n.ResultView.start
     }
     
     func triggerTimer() {
-        if viewState.timerState == .runningTimer {
+        if viewState.timerState == .running {
             viewState.timerState = .idle
         } else {
-            viewState.timerState = .runningTimer
+            viewState.timerState = .running
         }
     }
 }
 
 extension ResultViewModel {
-    struct ViewState {
+    struct ResultState {
         @Binding var timerState: TimerState
         let answersCount: Int
         let totalCount: Int

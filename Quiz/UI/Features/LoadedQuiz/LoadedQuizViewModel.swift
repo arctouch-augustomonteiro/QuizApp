@@ -7,11 +7,9 @@
 
 import Foundation
 
-private let MAX_SECONDS = 30
-
 final class LoadedQuizViewModel: ObservableObject {
     
-    @Published var viewState: ViewState
+    @Published var viewState: LoadedQuizState
     @Published var timerState: TimerState = .idle
     
     let question: String
@@ -19,8 +17,10 @@ final class LoadedQuizViewModel: ObservableObject {
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
+    static let MAX_SECONDS = 30
+    
     init(
-        viewState: ViewState,
+        viewState: LoadedQuizState,
         question: String,
         wordsList: [String]
     ) {
@@ -30,11 +30,11 @@ final class LoadedQuizViewModel: ObservableObject {
     }
     
     var isQuizTextFieldEnabled: Bool {
-        timerState == .runningTimer
+        timerState == .running
     }
     
     func handleTimerTick() {
-        if timerState == .runningTimer {
+        if timerState == .running {
             viewState.secondsRemaining -= 1
             if viewState.secondsRemaining == 0 {
                 timerState = .paused
@@ -45,7 +45,7 @@ final class LoadedQuizViewModel: ObservableObject {
     
     func handleTimerStateChange() {
         if timerState == .idle {
-            viewState.secondsRemaining = MAX_SECONDS
+            viewState.secondsRemaining = LoadedQuizViewModel.MAX_SECONDS
             viewState.answeredList = []
         }
     }
@@ -75,9 +75,9 @@ final class LoadedQuizViewModel: ObservableObject {
 }
 
 extension LoadedQuizViewModel {
-    struct ViewState {
+    struct LoadedQuizState {
         var word: String = ""
-        var secondsRemaining: Int = MAX_SECONDS
+        var secondsRemaining: Int = LoadedQuizViewModel.MAX_SECONDS
         var answeredList: [String] = []
         var activeAlert: AlertInfo? = nil
     }
