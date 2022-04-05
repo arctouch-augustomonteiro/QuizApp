@@ -11,8 +11,7 @@ import SwiftUI
 struct QuizApp: App {
     var body: some Scene {
         WindowGroup {
-            Text("Hello, world!")
-                .padding()
+            QuizView(viewModel: .init(quizLoader: FakeQuizLoader()))
         }
     }
 }
